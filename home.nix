@@ -10,7 +10,7 @@
 
   neofetch
   btop
-  nix-output-monitor
+  nox
 
   # archives
   zip

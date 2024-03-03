@@ -33,6 +33,7 @@
         ./hardware-configuration.nix
         ./configuration.nix
 
+	./greetd.nix
         home-manager.nixosModules.home-manager
         {
           home-manager.useGlobalPkgs = true;

@@ -62,11 +62,22 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  # Enable the X11 windowing system.
+
+
+  # services.xserver.displayManager.sddm.enable = true;
+  # services.xserver.displayManager.sddm.wayland.enable = true;
+
+  programs.hyprland = { 
+    enable = true;
+    xwayland.enable = true;
+  };
+
+  # Might Need for XWayland.
   services.xserver.enable = true;
 
+
+
   # Enable the XFCE Desktop Environment.
-  services.xserver.displayManager.lightdm.enable = true;
   services.xserver.desktopManager.xfce.enable = true;
 
   # Configure keymap in X11
@@ -114,7 +125,7 @@
   };
 
   # Enable automatic login for the user.
-  services.xserver.displayManager.autoLogin.enable = true;
+  services.xserver.displayManager.autoLogin.enable = false;
   services.xserver.displayManager.autoLogin.user = "occam";
 
   # Allow unfree packages

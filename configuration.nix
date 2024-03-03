@@ -12,7 +12,16 @@
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
+  # Limit the number of generations to keep and show in boot loader
+  boot.loader.systemd-boot.configurationLimit = 15;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  # Weekly garbage collection to minimize disk usage
+  nix.gc = {
+    automatic = true;
+    dates = "weekly";
+    options = "--delete-older-than-30d";
+  };
 
   networking.hostName = "razor"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.

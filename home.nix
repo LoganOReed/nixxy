@@ -10,7 +10,6 @@
 
   neofetch
   btop
-  nox
 
   # archives
   zip
@@ -24,6 +23,7 @@
   eza # A modern replacement for ‘ls’
   fzf # A command-line fuzzy finder
   just # Like a simplified MakeFile for project specific commands
+  manix # CLI Nix Documentation Search
 
   ];
 

@@ -6,6 +6,13 @@
 #
 ############################################################################
 
+# Search Documentation using FZF
+docs:
+  manix "" | grep '^# ' | sed 's/^# \(.*\) (.*/\1/;s/ (.*//;s/^# //' | fzf --preview="manix '{}'" | xargs manix
+
+search:
+  manix "" | grep '^# ' | sed 's/^# \(.*\) (.*/\1/;s/ (.*//;s/^# //' | fzf --preview="manix '{}'" | xargs manix
+
 # deploy and switch
 deploy:
   sudo nixos-rebuild switch --flake .

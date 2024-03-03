@@ -13,8 +13,10 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   # Limit the number of generations to keep and show in boot loader
-  boot.loader.systemd-boot.configurationLimit = 15;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.systemd-boot.configurationLimit = 15;
+
+
 
   # Weekly garbage collection to minimize disk usage
   nix.gc = {
@@ -22,6 +24,15 @@
     dates = "weekly";
     options = "--delete-older-than-30d";
   };
+
+  # Optimize storage
+  # You can also manually optimize the store via:
+  #    nix-store --optimise
+  # Refer to the following link for more details:
+  # https://nixos.org/manual/nix/stable/command-ref/conf-file.html#conf-auto-optimise-store
+  nix.settings.auto-optimise-store = true;
+
+
 
   networking.hostName = "razor"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.

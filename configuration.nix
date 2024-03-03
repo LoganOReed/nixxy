@@ -64,6 +64,7 @@
 
 
 
+  # I use greetd now instead of sddm
   # services.xserver.displayManager.sddm.enable = true;
   # services.xserver.displayManager.sddm.wayland.enable = true;
 
@@ -77,14 +78,16 @@
 
 
 
-  # Enable the XFCE Desktop Environment.
+  # Currently enabled due to lazyness
+  # makes a couple small things easier (like removable drives)
   services.xserver.desktopManager.xfce.enable = true;
 
+  # This seems to be redundant due to Hyprland
   # Configure keymap in X11
-  services.xserver = {
-    xkb.layout = "us";
-    xkb.variant = "";
-  };
+  # services.xserver = {
+  #   xkb.layout = "us";
+  #   xkb.variant = "";
+  # };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
